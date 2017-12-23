@@ -7,6 +7,7 @@ import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail'
 const API_KEY = 'AIzaSyD2eVWpbZ_vHlJNZ066OoumVA01fYnS0RU';
 // ini file gua
+//lagi
 class App extends Component {
   constructor(props){
     super(props);
