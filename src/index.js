@@ -8,6 +8,7 @@ import VideoDetail from './components/video_detail'
 const API_KEY = 'AIzaSyD2eVWpbZ_vHlJNZ066OoumVA01fYnS0RU';
 // ini file gua
 //lagi
+//tiga
 class App extends Component {
   constructor(props){
     super(props);
