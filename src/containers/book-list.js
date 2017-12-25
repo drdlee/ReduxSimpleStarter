@@ -12,7 +12,8 @@ class BookList extends Component {
           onClick={()=> this.props.selectBook(book)} // this will run the selectBook function
           className="list-group-item">
             {book.title}
-        </li>)
+        </li>
+      )
     })
   }
 
@@ -34,6 +35,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return bindActionCreators({selectBook: selectBook}, dispatch)
-} //this function will bind the action imported above(selectBook), to a new property of selectBook
+} //this function will bind the action imported above(selectBook), to a new property of selectBook:
   // and pass it to every object in the state also this will be available in the state same as books
+
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
