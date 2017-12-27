@@ -8,7 +8,7 @@ export const FETCH_WEATHER = 'FETCH_WEATHER'
 export function fetchWeather(city){
   const url = `${ROOT_URL}&q=${city},us`;
   const request = axios.get(url);
-  console.log('Request: ',request)  // here the action only return Promise not data when it make a Get request to the API
+  console.log('Request make from Action: ',request)  // here the action only return Promise not data when it make a Get request to the API
   return {
     type: FETCH_WEATHER,
     payload: request
