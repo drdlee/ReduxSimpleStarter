@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 export default class App extends Component {
   render() {
     return (
-      <div>Initial Commit</div>
+      <div>
+        APPJS
+        {this.props.children}
+      </div>
     );
   }
 }
