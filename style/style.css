@@ -10,3 +10,8 @@ td, th {
 svg {
   height: 100px;
 }
+
+#map{
+  height:200px;
+  width: 250px;
+}
