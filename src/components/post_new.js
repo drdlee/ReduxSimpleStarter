@@ -4,13 +4,24 @@ import { Link } from 'react-router';
 import { createPost } from '../actions/index';
 
 class PostNew extends Component {
+  static contexTypes = {
+    router: PropTypes.object
+  } // this is for redirect after submit, so we will check all the react component and look for router, and below we will push it / redirect it.
+
+  onSubmit(props){
+    this.props.createPost(props)  // so after we pass the data from form to Action createPost, the return is Promise so we can use .then
+      .then(()=> {
+        this.contex.router.push('/'); // redirect to '/'
+      })
+  }
+
   render(){
     const { fields: { title, categories, content }, handleSubmit } = this.props;
     // same as const title = this.props.fields.title, categories = this.props.fields.categories
     // const handleSubmit = this.props.handleSubmit
 
     return(
-      <form onSubmit={handleSubmit(this.props.createPost)}>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
       {/*  // ^so handleSubmit is a function from reduxForm, will be available when we use reduxForm, and it will get the content from the form and pass it to the action createPost to process the new post  */}
         <h3>Create A New Post</h3>
         <div className={`form-group ${title.touched && title.invalid ? 'has-danger' : ''}`}>
