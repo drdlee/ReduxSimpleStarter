@@ -4,14 +4,14 @@ import { Link } from 'react-router';
 import { createPost } from '../actions/index';
 
 class PostNew extends Component {
-  static contexTypes = {
-    router: PropTypes.object
-  } // this is for redirect after submit, so we will check all the react component and look for router, and below we will push it / redirect it.
+  // static contexTypes = {
+  //   router: PropTypes.object
+  // } // this is for redirect after submit, so we will check all the react component and look for router, and below we will push it / redirect it.
 
   onSubmit(props){
     this.props.createPost(props)  // so after we pass the data from form to Action createPost, the return is Promise so we can use .then
       .then(()=> {
-        this.contex.router.push('/'); // redirect to '/'
+        this.props.history.push('/'); // redirect to '/'
       })
   }
 
